@@ -34,7 +34,8 @@ fi
 
 if [ $SESSION_TYPE = "remote/ssh" ];
 then 
-  echo "ssh!"
+  #echo "ssh!"
+  POWERLEVEL9K_CONTEXT_DEFAULT_BACKGROUND="003"
 fi
 
 POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND="black"
@@ -85,3 +86,15 @@ bindkey "^[[3~" delete-char
 
 # iTerm2 integrations
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+##############################################################################
+## History Configuration
+###############################################################################
+HISTSIZE=5000               #How many lines of history to keep in memory
+HISTFILE=~/.zsh_history     #Where to save history to disk
+SAVEHIST=5000               #Number of history entries to save to disk
+#HISTDUP=erase               #Erase duplicates in the history file
+setopt    appendhistory     #Append history to the history file (no overwriting)
+setopt    sharehistory      #Share history across terminals
+setopt    incappendhistory  #Immediately append to the history file, not just when a term is killed
+
