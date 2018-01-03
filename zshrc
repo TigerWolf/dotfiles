@@ -15,7 +15,7 @@ rvm_version_display(){
 POWERLEVEL9K_CUSTOM_RVM="rvm_version_display"
 POWERLEVEL9K_CUSTOM_RVM_BACKGROUND="red"
 
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir custom_rvm vcs) # swift_version
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir custom_rvm vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs time command_execution_time)
 POWERLEVEL9K_CONTEXT_DEFAULT_BACKGROUND="green"
 POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND="black"
@@ -27,11 +27,35 @@ POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND="black"
 
 #Antigen START
 source /usr/local/share/antigen/antigen.zsh
+# Manage Oh-My-Zsh plugins with Antigen
+#source $(brew --prefix)/share/antigen.zsh
 
 antigen theme bhilburn/powerlevel9k powerlevel9k
+
+#antigen use prezto
+
+#antigen bundle sorin-ionescu/prezto modules/helper  # required for Git module
+#antigen bundle sorin-ionescu/prezto modules/editor
+#antigen bundle sorin-ionescu/prezto modules/git
+#antigen bundle sorin-ionescu/prezto modules/prompt
+
+antigen bundle zsh-users/zsh-completions
+#antigen bundle git
+#antigen bundle colorize
+#antigen bundle github
+#antigen bundle brew
+#antigen bundle osx
+#antigen bundle rails
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-history-substring-search
+# configure your keybindings here... just 2 lines of code!
 antigen apply
 #Antigen END
 
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=1
 # RVM
 source /Users/kieran/.rvm/scripts/rvm
 
