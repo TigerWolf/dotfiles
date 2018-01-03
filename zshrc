@@ -7,6 +7,9 @@ POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 PS1="\$(~/.rvm/bin/rvm-prompt) $PS1"
 rvm_version_display(){
   local color='%F{black}'
+  if ! [ -x "$(command -v ~/.rvm/bin/rvm-prompt)" ]; then
+    exit 1
+  fi
   ruby_version=$(~/.rvm/bin/rvm-prompt i v)
   if [ -n "$ruby_version" ]; then
     echo "%{$color%}♦️${ruby_version//ruby-} "
@@ -74,7 +77,8 @@ bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=1
 # RVM
-source /Users/kieran/.rvm/scripts/rvm
+FILE=/Users/kieran/.rvm/scripts/rvm && test -f $FILE && source $FILE
+#source /Users/kieran/.rvm/scripts/rvm
 
 # Make delete key work
 bindkey "^[[3~" delete-char
