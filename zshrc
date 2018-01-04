@@ -17,7 +17,22 @@ POWERLEVEL9K_CUSTOM_RVM_BACKGROUND="red"
 
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir custom_rvm vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs time command_execution_time)
+
 POWERLEVEL9K_CONTEXT_DEFAULT_BACKGROUND="green"
+
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+  SESSION_TYPE=remote/ssh
+else
+  case $(ps -o comm= -p $PPID) in
+    sshd|*/sshd) SESSION_TYPE=remote/ssh;;
+  esac
+fi
+
+if [ $SESSION_TYPE = "remote/ssh" ];
+then 
+  echo "ssh!"
+fi
+
 POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND="black"
 # Theme END
 
