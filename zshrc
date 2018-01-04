@@ -32,8 +32,7 @@ else
   esac
 fi
 
-if [ $SESSION_TYPE = "remote/ssh" ];
-then 
+if [ "$SESSION_TYPE" = "remote/ssh" ]; then 
   #echo "ssh!"
   POWERLEVEL9K_CONTEXT_DEFAULT_BACKGROUND="003"
 fi
