@@ -42,9 +42,11 @@ POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND="black"
 
 # Colors
 #[ -n "$PS1" ] && sh ~/.nightshell/office-dark
-[ -n "$PS1" ] && sh ~/.vimspectr-shell/vimspectr30-dark
+[ -n "$PS1" ] && sh ~/.vimspectr-shell/vimspectr210-dark
 #export LSCOLORS="exfxcxdxbxegedabagacad"
 export CLICOLOR=true
+#alias ls='ls --color=auto'
+ls --color=auto &> /dev/null && alias ls='ls --color=auto' ||
 
 case `uname` in
   Darwin)

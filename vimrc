@@ -31,13 +31,14 @@ call plug#end()
 "end
 
 ":silent! colorscheme office-dark
-:silent! colorscheme vimspectr30-dark
+:silent! colorscheme vimspectr210-dark
 
 set number
 set expandtab
 let g:airline#extensions#ale#enabled = 1
 set tabstop=2
 let g:ctrlp_open_new_file = 'r'
+set paste
 
 " netrw
 let g:netrw_banner = 0
