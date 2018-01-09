@@ -42,7 +42,7 @@ POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND="black"
 
 # Colors
 [ -n "$PS1" ] && sh ~/.nightshell/office-dark
-
+alias ls='gls --color=auto'
 
 #Antigen START
 #source /usr/local/share/antigen/antigen.zsh
