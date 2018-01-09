@@ -99,3 +99,5 @@ setopt    incappendhistory  #Immediately append to the history file, not just wh
 
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

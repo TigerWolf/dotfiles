@@ -22,6 +22,10 @@ call plug#begin('~/.vim/plugged')
  Plug 'w0rp/ale'                     " async lint engine
  Plug 'airblade/vim-gitgutter'       " show +/-/~ in gutter
  Plug 'https://github.com/terryma/vim-multiple-cursors.git' 
+ "Plug 'mileszs/ack.vim'
+ " Plug 'ervandew/ag'
+ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+ Plug 'junegunn/fzf.vim'
 call plug#end()
 "end
 
