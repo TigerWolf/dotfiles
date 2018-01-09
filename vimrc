@@ -37,6 +37,10 @@ let g:airline#extensions#ale#enabled = 1
 set tabstop=2
 let g:ctrlp_open_new_file = 'r'
 
+" netrw
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+
 filetype plugin indent on
 " when indenting with '>', use 2 spaces width
 set shiftwidth=2
