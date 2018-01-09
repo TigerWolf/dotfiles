@@ -41,7 +41,10 @@ POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND="black"
 # Theme END
 
 # Colors
-[ -n "$PS1" ] && sh ~/.nightshell/office-dark
+#[ -n "$PS1" ] && sh ~/.nightshell/office-dark
+[ -n "$PS1" ] && sh ~/.vimspectr-shell/vimspectr30-dark
+#export LSCOLORS="exfxcxdxbxegedabagacad"
+export CLICOLOR=true
 
 case `uname` in
   Darwin)
@@ -87,6 +90,15 @@ antigen apply
 
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+
+bindkey '^[^[[D' backward-word
+bindkey '^[^[[C' forward-word
+bindkey '^[[5D' beginning-of-line
+bindkey '^[[5C' end-of-line
+bindkey '^[[3~' delete-char
+bindkey '^[^N' newtab
+bindkey '^?' backward-delete-char
+
 HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=1
 # RVM
 FILE=/Users/kieran/.rvm/scripts/rvm && test -f $FILE && source $FILE
@@ -105,6 +117,7 @@ HISTSIZE=5000               #How many lines of history to keep in memory
 HISTFILE=~/.zsh_history     #Where to save history to disk
 SAVEHIST=5000               #Number of history entries to save to disk
 #HISTDUP=erase               #Erase duplicates in the history file
+setopt HIST_IGNORE_ALL_DUPS  # don't record dupes in history
 setopt    appendhistory     #Append history to the history file (no overwriting)
 setopt    sharehistory      #Share history across terminals
 setopt    incappendhistory  #Immediately append to the history file, not just when a term is killed

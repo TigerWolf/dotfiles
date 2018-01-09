@@ -13,7 +13,8 @@ endif
 
 "if !empty(glob("~/.vim/plugged"))
 call plug#begin('~/.vim/plugged')
- Plug 'nightsense/office'
+" Plug 'nightsense/office'
+ Plug 'nightsense/vimspectr'
  Plug 'vim-airline/vim-airline'
  Plug 'ctrlpvim/ctrlp.vim'
  Plug 'tpope/vim-fugitive'           " Git
@@ -29,7 +30,8 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 "end
 
-:silent! colorscheme office-dark
+":silent! colorscheme office-dark
+:silent! colorscheme vimspectr30-dark
 
 set number
 set expandtab
