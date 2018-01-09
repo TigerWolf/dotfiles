@@ -46,7 +46,6 @@ POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND="black"
 #export LSCOLORS="exfxcxdxbxegedabagacad"
 export CLICOLOR=true
 #alias ls='ls --color=auto'
-ls --color=auto &> /dev/null && alias ls='ls --color=auto' ||
 
 case `uname` in
   Darwin)
@@ -55,6 +54,7 @@ case `uname` in
   ;;
   Linux)
     # commands for Linux go here
+    ls --color=auto &> /dev/null && alias ls='ls --color=auto' ||
   ;;
   FreeBSD)
     # commands for FreeBSD go here
