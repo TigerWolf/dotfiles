@@ -42,7 +42,19 @@ POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND="black"
 
 # Colors
 [ -n "$PS1" ] && sh ~/.nightshell/office-dark
-alias ls='gls --color=auto'
+
+case `uname` in
+  Darwin)
+    # commands for OS X go here
+		alias ls='gls --color=auto'
+  ;;
+  Linux)
+    # commands for Linux go here
+  ;;
+  FreeBSD)
+    # commands for FreeBSD go here
+  ;;
+esac
 
 #Antigen START
 #source /usr/local/share/antigen/antigen.zsh
@@ -97,7 +109,9 @@ setopt    appendhistory     #Append history to the history file (no overwriting)
 setopt    sharehistory      #Share history across terminals
 setopt    incappendhistory  #Immediately append to the history file, not just when a term is killed
 
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
+if [ -d "$HOME/.jenv" ]; then
+  export PATH="$HOME/.jenv/bin:$PATH"
+  eval "$(jenv init -)"
+fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
