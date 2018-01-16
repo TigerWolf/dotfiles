@@ -38,7 +38,6 @@ set expandtab
 let g:airline#extensions#ale#enabled = 1
 set tabstop=2
 let g:ctrlp_open_new_file = 'r'
-set paste
 se mouse+=a
 
 " netrw
