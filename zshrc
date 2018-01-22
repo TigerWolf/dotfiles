@@ -109,6 +109,16 @@ FILE=/Users/kieran/.rvm/scripts/rvm && test -f $FILE && source $FILE
 # Make delete key work
 bindkey "^[[3~" delete-char
 
+# iTerm2 window title
+set-window-title() {
+  window_title="\e]0;${${PWD/#"$HOME"/~}/projects/p}\a"
+  echo -ne "$window_title"
+}
+
+#PR_TITLEBAR=''
+#set-window-title
+add-zsh-hook precmd set-window-title
+
 # iTerm2 integrations
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 

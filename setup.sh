@@ -11,5 +11,6 @@ unlink ~/.vimrc > /dev/null 2>&1
 
 ln -s ~/dotfiles/zshrc ~/.zshrc
 ln -s ~/dotfiles/vimrc ~/.vimrc
+ln -s ~/.vim/plugged/vimspectr/shell ~/.vimspectr-shell
 
 echo -en 'Files linked.';
