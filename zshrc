@@ -3,6 +3,7 @@ POWERLEVEL9K_INSTALLATION_PATH=$ANTIGEN_BUNDLES/bhilburn/powerlevel9k
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 
+export TERM="xterm-256color"
 #TODO: Check for this command on non rvm systems
 PS1="\$(~/.rvm/bin/rvm-prompt) $PS1"
 rvm_version_display(){
