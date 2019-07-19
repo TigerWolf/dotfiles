@@ -14,7 +14,8 @@ endif
 "if !empty(glob("~/.vim/plugged"))
 call plug#begin('~/.vim/plugged')
 " Plug 'nightsense/office'
-  Plug 'nightsense/vimspectr'
+"  Plug 'nightsense/vimspectr'
+  Plug 'nightsense/snow'
   Plug 'vim-airline/vim-airline'
   Plug 'ctrlpvim/ctrlp.vim'
   Plug 'tpope/vim-fugitive'           " Git
