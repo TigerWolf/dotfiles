@@ -42,9 +42,6 @@ POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND="black"
 # Theme END
 
 # Colors
-#[ -n "$PS1" ] && sh ~/.nightshell/office-dark
-[ -n "$PS1" ] && sh ~/.vimspectr-shell/vimspectr210-dark
-#export LSCOLORS="exfxcxdxbxegedabagacad"
 export CLICOLOR=true
 #alias ls='ls --color=auto'
 
@@ -65,17 +62,9 @@ esac
 #Antigen START
 #source /usr/local/share/antigen/antigen.zsh
 source ~/dotfiles/antigen.zsh
-# Manage Oh-My-Zsh plugins with Antigen
-#source $(brew --prefix)/share/antigen.zsh
 
-antigen theme bhilburn/powerlevel9k powerlevel9k
+antigen theme romkatv/powerlevel10k
 
-#antigen use prezto
-
-#antigen bundle sorin-ionescu/prezto modules/helper  # required for Git module
-#antigen bundle sorin-ionescu/prezto modules/editor
-#antigen bundle sorin-ionescu/prezto modules/git
-#antigen bundle sorin-ionescu/prezto modules/prompt
 
 antigen bundle zsh-users/zsh-completions
 #antigen bundle git
@@ -103,9 +92,6 @@ bindkey '^[^N' newtab
 bindkey '^?' backward-delete-char
 
 HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=1
-# RVM
-FILE=/Users/kieran/.rvm/scripts/rvm && test -f $FILE && source $FILE
-#source /Users/kieran/.rvm/scripts/rvm
 
 # Make delete key work
 bindkey "^[[3~" delete-char

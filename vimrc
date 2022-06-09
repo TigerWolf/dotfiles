@@ -13,9 +13,7 @@ endif
 
 "if !empty(glob("~/.vim/plugged"))
 call plug#begin('~/.vim/plugged')
-" Plug 'nightsense/office'
-"  Plug 'nightsense/vimspectr'
-  Plug 'nightsense/snow'
+  Plug 'sainnhe/sonokai'
   Plug 'vim-airline/vim-airline'
   Plug 'ctrlpvim/ctrlp.vim'
   Plug 'tpope/vim-fugitive'           " Git
@@ -24,17 +22,12 @@ call plug#begin('~/.vim/plugged')
   Plug 'w0rp/ale'                     " async lint engine
   Plug 'airblade/vim-gitgutter'       " show +/-/~ in gutter
   Plug 'https://github.com/terryma/vim-multiple-cursors.git' 
- "Plug 'mileszs/ack.vim'
- " Plug 'ervandew/ag'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
   Plug 'scrooloose/nerdcommenter'
   Plug 'tomtom/tcomment_vim'
 call plug#end()
 "end
-
-":silent! colorscheme office-dark
-:silent! colorscheme vimspectr210-dark
 
 set number
 set expandtab
@@ -64,7 +57,10 @@ set novisualbell
 set t_vb=
 set tm=500
 
-
+" The configuration options should be placed before `colorscheme sonokai`.
+let g:sonokai_style = 'andromeda'
+let g:sonokai_better_performance = 1
+colorscheme sonokai
 
 " netrw
 let g:netrw_banner = 0
