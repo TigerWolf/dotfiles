@@ -71,4 +71,6 @@ filetype plugin indent on
 set shiftwidth=2
 " On pressing tab, insert 2 spaces
 set expandtab
+silent !mkdir ~/.vimswp > /dev/null 2>&1
+
 set backupdir=~/.vimswp
