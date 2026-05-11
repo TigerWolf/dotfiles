@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 # Install dependencies
 curl -L git.io/antigen > antigen.zsh
@@ -19,6 +19,7 @@ case `uname` in
       /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
       brew bundle
     else
+      brew bundle
       brew update
     fi
   ;;
